@@ -92,6 +92,13 @@ def generateWalk():
     wk.createFootMotion(_startFrame[0], _endFrame[0], _footAmplitude[0], _footSpeed[0], 5, _fps[0])
 
 def generateBehaviour():
-    generateWalk()
+#TO DO: Implement abstract factory method   
+    currentValue = cmds.optionMenu(widgets['cyclicActionType'], query=True, value=True) 
+    if (currentValue == "Idle"):
+        print "Generetating idle pose. Not implemented yet." 
+    elif (currentValue == "Walking"):
+        generateWalk()
+    elif (currentValue == "Running"):
+        print "Generetating running. Not implemented yet." 
     
 createGUI()
